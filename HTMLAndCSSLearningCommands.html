@@ -1,1 +1,410 @@
 <!--! HTML basics -->
+Elements surrounded in angle brackets<>, usually have a start and end tag. some tags are self closing tags <br />
+because there is no content inside of it.
+<br> is valid in HTML and ,<br /> can be used in html and xhtml. html is the standard now so we can use <br>
+An important thing we need in a html document is Doctype
+<!DOCTYPE html>. it tells the browser what type is the document is
+for older html files. the doc type is different and lengthy
+we need html tag next. then we have a head and then body. head is for information about the page, dont display in
+the page. important tag in head is the title that we show onn the browser tab.
+//+ we can put anything else in the body
+    <!-- <!DOCTYPE html>   Basic structure
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+</body>
+<h1>My website</h1>
+<p>This is my website</p>
+</html> -->
+In VScode we can use ! to generate default html content
+<!--! Adding Comment-->
+you know how to do it < ! - - comment here - ->
+<!--! Meta Tags -->
+give info about the page
+<meta charset="utf-8">  charecter set, specify charector encoding
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> viewport is very useful for the responsive application with different screens size
+<meta http-equiv="X-UA-Compatible" content="IE=edge">  related to browser compatibility
+
+Title is what show on the search engine. for showing the description of the website in the search engine , we can use  meta tag description
+<meta name="description" content="This is my page description.">
+the meta keywork tah helps with the search engines as well.
+<meta name="keywords" content="web development, web design">
+if we dont want to see our site in search engines then we can use robots meta tag
+<meta name="robots" content="NOINDEX, NOFOLLOW">
+if we are in midddle of line we can click cntrl and enter to go to new line
+
+<!--! Basic tags -->
+h1 h2 h3 h4 h5 and h6 is used for headers . tip: one h1 per page is good, search engine look for it
+<p></p> for paragraph. and anything inside <strong></strong> tag will be bolded
+<em></em> tag is used for italic.
+<br> tag for to move it to next line
+<hr> tag will create a horizontal line horizontal rule
+<del></del> for strike out
+<b> or <u> tags are deprecated and not use anymore
+
+<a href="http://google.com">Click for google</a> for the link . to open in different tab we can use target attribute target="_blank" . this is for the external link
+for mentioning the files fro m folder, we can use / <a href="/HTMLSandBox/Basic.html"></a> . / indicates the current folder
+<img src="/HTMLSandBox/Images/apple-na-original-imafr5acnvhzmrzj.jpeg" alt="My image"> img is used for thr image and alt is for alternate name,
+if the image doesnt show up, what to do. src for source of the file.
+for remote image we can go to https://source.unsplash.com/ . we can give the  image url in the source
+
+<!--! Lists -->
+there are multiple lists, unordered lists which are not ordered.
+<ul></ul> is for unordered list and <li></li> for the each items inside. for unordered list bullets will be showing
+<ul>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ul>
+
+<ol></ol> is used for ordered list <li></li>can be used for each items . so  here we get numbers. we can give type attribute type="A"
+<ol type="a">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+</ol>
+we can use nested lists, we can add the ul inside a list
+
+<!--! Tables -->
+table have table element and inside of that thead and tbody. tr represents row and th reprents the header. td for columns
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>number</th>
+            <th>random</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ans</td>
+            <td>123</td>
+            <td>gfdhfgjhfd</td>
+        </tr>
+        <tr>
+            <td>Mansoor</td>
+            <td>64576</td>
+            <td>kgkuyk</td>
+        </tr>
+        <tr>
+            <td>jithi</td>
+            <td>456</td>
+            <td>dsgsdgktuis</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--! Form -->
+<form action="link to the action"> action is where this action is submitted to.
+    <label for="name"></label>   for attribute is used to match the id of the input element, so both can be related to each other
+    <input type="text" id="name" name="name" placeholder="name">   here the id and label for is matching. so when we click on the label, the text box will be hightlighted.
+     name attribute is used in the server side. if we want to autofill some value we can use value attribute. placeholder can be used to show the text
+    <input type="email" name="" id=""> here we can use email type. it have auto validation
+    <textarea name="" id="" cols="30" rows="10"></textarea>   text area used for much bigger texts. cols and rows are property to change the size
+    <select name="sex" id="">    for dropdown
+        <option value=""> select</option>       each items
+        <option value="" selected> male</option>          selected for selecting by default
+        <option value=""> female</option>
+    </select>
+    <input type="number" name="" id="">   for number inputs
+    <input type="date" name="" id=""> for the date
+    <input type="radio" name="membership" id="membership" value="new" checked>new              for radio buttons, checked attribute can be used for default apply
+    <input type="radio" name="membership" id="membership" value="existing" >existing
+    <input type="checkbox" name="sports" id="sports" value="Cricket" > football      for checkbox
+    <input type="submit" value="submit">      for submit button
+    <button type="button">Submit</button>
+    <button type="reset">Reset</button>      for clearing all the value in the form
+</form>
+
+<!--! Inline and block level -->
+block level elements take the entire width, everything we do will go to next line. inline only take those specific space
+
+<!--! Divs and Spans -->
+div is used for devition.
+id and class is functionally same but better to keep only a single id in a page and can have multiple same classes
+div is block level and push things down span is inline.
+
+<!--! Entities -->
+for getting extra spaces in text, we can use non breaking space &nbsp;
+for using greater tan less than symbol &gt; or &lt;
+for copyright &copy; aand trademark &reg;
+for currency &cent; &euro;
+for symbols &spades; &clubs;
+<kbd>Cntrl + S</kbd> for showing like keyboard
+
+<!--! html semantic tags -->
+<header></header>
+<footer></footer>
+<nav></nav> for navigation
+<main></main> main content
+<section></section> for different section
+<article></article> article
+<aside></aside>  secondary place kinda
+
+<!--! CSS -->
+inline css is writing style directly in html tag. we can use style attribute
+internal css. same page but sperated from html
+external css, seperate styling file. create css file and write style. we can use the link tag in the htmls to bring the file
+<link rel="stylesheet" href="location">
+
+<!--! Fonts -->
+serif have some extra at the edges. but sans serif is straight edges
+font-family can be used for selecting the font family of the font. we can go to google fonts and use the fonts by importing or we can use the link in html. roboto font is nice
+font-size can be used for font size. default is 16 pixels
+line-height is the height of each line, the value is in em units, which is relative unit
+font-weight can be used for bold
+font-style for changing the font style
+body{font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height:1.6em}
+.welcome span{font-weight: bold;}
+.about span{font-style: italic;}
+<!--! Units -->
+Absolute units
+px is more common
+relative units
+% , em is multiplier - for example 1.5em to parent element of 10 pixel is 10*1.5.
+rem is same but instead of parent element , html root is considered
+
+<!--! Colors -->
+color will be the color of the text.
+we can give color like red or rgb value, we can give values in rgb between 0 255. rgb(255,19, 20) or we can use hexadecimal color # and 6 charectors a to f or numbers
+it is red first 2, green 2nd 2 and blue last 2. #00df21 . color-hex.com have good color values or htmlcolorcode.com
+
+<!--! Background and borders -->
+jpeg file will not be transparent. Png can have a transparency
+background-color for background color
+border-width, border-color, border-style property is used for the border. both 3 should be used. but we can do it by border
+border-top can be used only for top, we can do border-bottom etc
+border-radius xaxn be used to curve the corner
+border-top-left-radius is used to round only that corner
+height can be used for height in pixels and width can be used for width in pixels
+background-image can be used for background image. url(./Images/wp6036136-manfalorian-minimal-poster-wallpapers.jpg) to mention the url of the image
+background-repeat can be used for repeating the backround.
+background-position to give the position of the backround. we can use pixels and other values like centre
+backround-size can be used to show the entire image.
+
+color: white;
+height:300px;
+width: 750px;
+background-repeat: no-repeat;
+background-position: -100px -100px;
+background-position: center top;
+background-size: cover;
+we can do all these without seperate
+background: url(./Images/wp6036136-manfalorian-minimal-poster-wallpapers.jpg) no-repeat center center/cover
+background-attachment: fixed can be used to make the backround fixed
+
+background: url(./Images/leaf.png) no-repeat center center;
+background-attachment: fixed;
+
+<!--! Box Model, Margin and padding -->
+margin is the space outside the border and padding is the space between the element and the border
+margin: 10px can be used to change the margin
+if we give * in the css  selector, it will select all.
+to reset everything we can use
+*{
+    margin:0px;
+    padding:0px;
+}
+
+box-sizing: border-box; can be used to making the element fixed width or height when we change the padding. so the box will be same and padding will be same. but the content inside will become smaller
+
+for making each side, we can use below properties
+padding-top: 10px;
+padding-right: 0px;
+padding-bottom: 10px;
+padding-left: 0px;
+we can make it in a sing shot . top, right, bottom, right is the order
+we can even make it small if both top bottom same and right left same. top/bottom , right/left will be the order
+padding 10px 5px
+
+same for margin as well
+we can add -ve values for margin
+
+<!--! Float and align -->
+for making the content in the middle, we shoould mention the width. and then make margin auto
+width:900px;
+margin: auto;
+
+but for lower resolution. it is bad. so we need to make it responsive, we can use max-width property. always use max-width
+max-width: 900px;
+margin: auto;
+
+for text alignment we can use text-align property text-align: center or left. justify will make the end words in proper allignment
+previously to make horizonal allignments, developers used floats, but now we have new way to do it like flex and grids.
+
+float is using for the alignment, for example horizontal. float alone will not do much. so we might need to use width as well
+but to make both item to come together, we might need to add border-box property box-sizing: border-box
+float:right;
+width:69%;
+
+if we have another element below, then there will be a problem and we need to clear it we can use clear: both for another div below this element and we can use it.
+.clear{
+    clear: both;
+}
+<div class="clear"></div> can be used just below the floated elements
+
+<!--! link state and button styling -->
+for link, by deault a blue text and underline will come, we can chang ethe color using the color property and we can use the text-decoration: none for removing the underline
+to make the color change when we hover over we can use :hover.
+a:hover{
+    color: coral;
+    text-decoration: underline;          for making it underline when hover
+}
+:visited can be used when we click on it and we can make the element change color and it always stay the same
+a:visited{
+    color: white;
+}
+:active can be used to make the element active when we click and change the properties
+a:active{
+    color:yellow;
+}
+
+for buttons
+
+background-color:#4c6ca0;
+color:#fff;
+border:none;
+font-size: 16px;
+padding:10px 20px;
+
+to show the pointer for the; button, we can use cursor property. cursor: pointer.
+
+<!--! Navigation Menus -->
+add ul and li's.
+to remove the dots fromt he li we can list style as none.
+li have padding of 40px to the right side of the item
+.side-menu{
+    list-style: none;
+    width: 300px;
+    border: 1px #ddd solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+we can use line-height property in li to change the heght between each li
+.side-menu li{
+    font-size: 18;
+    line-height:2.4em;
+    border-bottom: dotted 1px #ddd;
+}
+
+to remove the border-bottom for only the last element, we can use a psudo property :last-child . so last child will be selected
+.side-menu li:last-child{
+    border-bottom:none;
+}
+.side-menu li a{
+    color:#333;
+    text-decoration: none;
+}
+.side-menu li a:hover{
+    color:coral;
+}
+
+for the navigation bar,  create the ul and the li's. and remove all the padding and margin
+
+.nav-bar{
+    margin:none;
+    padding:none;
+    list-style:none;
+    background:#4c6ca0;
+    border-radius: 5px;
+    overflow:auto;
+}
+
+now we need to float the list items
+.nav-bar li{
+    float:left;
+} byt we gonna loose our background. to fix it, go to .nav-bar and make the overflow: auto
+
+.nav-bar li a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 20px
+}
+.nav-bar li a:hover{
+    color: #f4f4f4;
+    background-color:#446190;
+}
+we can makke the a tag to be block and add padding to it.
+
+<!--! Display Property -->
+block level elements will spread across the entire width. in line will only occuppy that space
+we can take block level element like li and make it to in-line by adding the display property display: in-line
+to make a in-line element like image to block, we can change the display to block. if the element is block then only margin: auto works.
+
+if we give the element as in-line and give the width, it will not be effective bacause inline element dont ahve a width. we can us inline-block which is a mix of inline and block
+for inline-block we can the width. agsin we need to ass box-sizing: border-box to make the padding not effect the width. and        img{
+    margin:auto;
+    display:block;
+}
+
+.box{
+    width:32%;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #f4f4f4;
+    display:inline-block;
+    box-sizing: border-box;
+}
+
+<!--! Position -->
+static is the default position of the element
+types:
+Static Not,effected by tblr(top, bottom, left, right) properties/values
+Relative — tblr values cause element to be moved from its normal position
+Absolute Positioned relative to its parent element that is positioned “relative”
+Fixed Positioned relative to the viewport
+Sticky Positioned based on scroll position
+
+relative with top and right will move the element to the specified postion. but static will not do
+#box1{
+    position: relative;
+    left: 100px;
+    top: 50;
+    background-color:red;
+    z-index: 1;
+}
+absolute have to do with a parent element. if there is no parent then it will use the entire browser window as parent. and the parent has to be positioned relative
+if we make the inner element absolute and give a top bottom or left right position then the inner element positioned relative to the parent element.
+.container{
+    width: 500px;
+    height: 500px;
+    background-color: #333;
+    position: relative;
+}
+#box2{
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    background-color:yellow;
+}
+
+to maake one element to come top of another we can use z-index property. higher index value will come on top. we can give z-index to -1 values
+we can use position fixed if we want to make the element fixed to the screen we can use fixed .z-index: 1;
+#box4{
+    position:fixed;
+    background-color:green;
+}
+sticky will stick to some position when we scroll and we need to mention the position to stick;
+#box5{
+    position:sticky;
+    top:0;
+    background-color:orange;
+}
+
+positionsing like this does not use in modern stylin because of the responsiveness
+
+we can use display: none to not show the element on the UI.
+we can use visibility: none. so the element will be hidden but the space will be still there
+
+targetting a class override targetting an element.
+if we want to override a style we can add !important
+h1{color: red !important;}
+if we use .. in file url. then wecan go outside of current folder. if weuse . then current folder
+
+
+pexels.com can be used for downloading images
