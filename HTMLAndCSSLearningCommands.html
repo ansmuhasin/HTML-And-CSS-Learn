@@ -408,3 +408,77 @@ if we use .. in file url. then wecan go outside of current folder. if weuse . th
 
 
 pexels.com can be used for downloading images
+
+we can add opacity to make the element transparent
+1 is no transparent . 0 is  transparent
+opacity: 0.9;
+input:focus can be used while we select the text box
+outline:none; can be used to remove the outline when focus on the outline of the text box
+
+<!--! Media queries -->
+Media queries will increase the responsiveness of the application in mobile devices. also we can use em unints instead of pixels to make it responsive.
+for media queries we can use
+usually smarphones will have width less than 500px
+we can use @media for media queries
+@media(max-width: 500px){}     --here width below 500px will be effected
+min-width do the opposite, more than the specified pixels will be effected.
+if we want both, we can give both maz-width and min-width
+@media(min-width: 501px) and (max-width:786px){}      -- here only between mentioned pexels will be effected.
+@media only screen -- meaning only screens - dont know what it means
+we can use max-height as well and min-height
+@media(max-width:500px){
+    body{
+        background:red;
+    }
+    #SmartPhone h1{ display:block;}
+}
+
+@media(min-width:500px) and (max-width:768px){
+    body{
+        background:blue;
+    }
+    #tablet h1{ display:block;}
+}
+
+we can add the seperate stylesheet for each devices and we can import it using link
+if we want to only import it for specific screen size we can do it as well.
+<link rel="stylesheet" media="screen and (max-width: 768px)" href="mobile.css">
+
+<!--! em and rem -->
+em and rem are almost similar. em is multiplier to its parent elemnts font size. rem is relative to its root html file's font size.
+if the parent element have font size of 20 px. then the em will multiply to it.
+16 is the default font size of html. so rem will be multiple to that value. we can change the font size of html
+html{font-size:10px;}
+
+em can cause problems because em consider parent elements font size. so it can make inner elements bigger than expected. and em have no effect if we change the browser font size. but rem have. which is good.
+
+<!--! Viewport height and viewport width -->
+viewport is the whole browser body. so if we give vh to 50, then it will consider 50 of the browser window height. value can be anything between 0 and 100
+
+<!--! FlexBox -->
+Modern layout mode in CSS3
+“flex” is a value for the display property
+Replaces floats and is much more elegant to work with
+Aligns items both horizontal (row) and vertical (column)
+Flex items can be re-ordered via CSS
+
+justify-content: Align along the main axis (horizontal)
+align-items: Align items along the cross axis (Vertical)
+align-content: Align when extra space in cross axis
+
+when we make an element to display flex then all the direct elements inside it will consider as flex item and which will be alligned by default.
+main axis is horizontal and cross axis is vertical.
+we can change the orientaion. by default its row. flex-direction:row; we can change it to column or column-reverse or row-reverse
+we can use flex-wrap to move the items to below when we reduce the browser window size. flex-wrap:wrap;
+we can use flex-shrink for making the item shrink or not.giving 0 will not shrink the item. flex-shrink: 0;
+we can use flex-grow which will make the item grow and fill up the extra spaces. flex-grow:1;
+if we setflex-grow to 2 for one item then that item will grow as twice as the item with value 1.
+flex-basis: 0; this is the width of the item i guess
+
+we can directly use flex property, which we can pass 3 values directly. flex 1 0 200px. here flex-grow 1 flex-shrink 0 and flex- basis 200px.
+here the item will be 200px and will not shrink below that and expand more than that
+
+align-items: centre; this property will make the items align to the centre of the cross axis. flex-start and flex-end is other values.
+justify-content: centre; this property will make the items align to the centre of the main axis. flex-start and flex-end is other values.
+we can give values like space-around; which will make the item equally distributed. space-between; can be used as well.
+we can use align-self:flex-start; to align them individually;
