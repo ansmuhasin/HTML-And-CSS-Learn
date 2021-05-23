@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .box{
+            padding: 3rem;
+            font-size: 1.3rem;
+            background-color: rgb(233, 208, 208);
+            border: 1px solid rgb(231, 62, 62);
+            text-align: center;
+            font-weight: bold;
+            /* margin: 1px; */
+
+        }
+
+        /* .grid{
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1rem;
+        }
+
+        .grid{
+            display: grid;
+            grid-template-rows: 1fr 2fr 2fr;
+            grid-auto-rows: 2fr;
+            grid-template-columns: 1fr 1fr;
+        } */
+
+        .grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="box">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box">Item 3</div>
+        <div class="box">Item 3</div>
+        <div class="box">Item 3</div>
+        <div class="box">Item 3</div>
+        <div class="box">Item 3</div>
+        <div class="box">Item 3</div>
+    </div>
+</body>
+</html>

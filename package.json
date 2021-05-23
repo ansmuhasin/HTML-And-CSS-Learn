@@ -1,0 +1,23 @@
+{
+  "name": "html-and-css-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w sasssandbox/scss/ -o sasssandbox/dist/css/ --recursive --usePolling --polling-interval 500"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansmuhasin/HTML-And-CSS-Learn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ansmuhasin/HTML-And-CSS-Learn/issues"
+  },
+  "homepage": "https://github.com/ansmuhasin/HTML-And-CSS-Learn#readme",
+  "dependencies": {
+    "node-sass": "^6.0.0"
+  }
+}
