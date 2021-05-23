@@ -482,3 +482,482 @@ align-items: centre; this property will make the items align to the centre of th
 justify-content: centre; this property will make the items align to the centre of the main axis. flex-start and flex-end is other values.
 we can give values like space-around; which will make the item equally distributed. space-between; can be used as well.
 we can use align-self:flex-start; to align them individually;
+
+we can go to cdnjs.com to get fontawesome or other links
+in google fonts, we can select the font and we can take the html link or we can take import link and put it in css
+
+for adding overlay, we can use ::before
+we can use psudo selector ::before and ::after to make changes to the element before or after.
+::before will let us add content before the element. ::After will let us add content after the element
+
+in ::before we need a property content='somevalue' but we can leave it as blank.
+for giving transparency we can use rgb alpha and give a color and give the opacity.  rgba(0,0,0, 0.6);
+if anything is behind the overlay, we can use z index to make it visible
+
+.item > div{} this means direct divs under item class
+
+when we do width and height of image to 100% and when we try to reduct the browser windown then the image can get weird, we can fix itby object-fit:cover
+.flex-columns img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+if we make flex : 100% then the flex itms will come below to each other.
+
+we can use https://code.jquery.com/ for getting jquery cdn, which is the content network and we can use it without including with the project.
+we can take the minified version
+
+we can use the library lightbox2 for viewing the photos
+https://lokeshdhakar.com/projects/lightbox2/
+
+to view the image icon on the tab, we can convert the image to the .ico file.
+we can go to https://tools.dynamicdrive.com/favicon/ and convert the file. and put that file inside the root directory. and copy the link mentioned <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+and put it on the header. check the ico link once again.
+
+<!--! Targetted Selectors -->
+if we mention > in the selcetor,  which means the direct child
+div > p{
+    here only direct child of div will be selected. not only all p.
+}
+
+if we want to select the element next to the specific one we can use add sign +  .... sibling
+div + p{
+    here the p eleement next to the div will be selected. we can select the sibling
+}
+
+if we want to select an element using specific attribute . we can us [AttributeName]
+a[target]{
+    here a with target attribute will be selected
+
+}
+
+input[type='email']{
+    if we want to specify the attribute value, we can so that as well. we can use a[target='_blank']
+}
+
+li{item $}*20 can use to cerate 20 lis
+<!--! nth psuedo selector -->
+li:first-child{
+    background:red;      --this can be used to select the first child
+}
+li:last-child{
+    background:green;   --can be used to select the last child
+}
+
+to select the nth child
+li:nth-child(3){
+    background: orange;
+}
+
+if we want to select the alternative 3rd child
+li:nth-child(3n+0){   here it will start from 0.if we want to start from 7th child and above, we can give 7 in the place of 0
+    background:purple;
+}
+
+li:nth-child(3n+7){
+    background:purple;
+}
+
+we can select odd values
+li:nth-child(odd){
+    background:purple;
+}
+
+li:nth-child(even){ even values as well
+    background:purple;
+}
+
+<!--! Before and After psudo selectors -->
+it can be used to add some content after or before the element. for example adding a required star in the label of a text box to show it is required
+<label for="" class="is-requered">Name</label>
+.is-requered::after{
+    content:"*";
+    padding-left:2px;
+    color:red;
+}
+
+<!--! Box Shadow -->
+Box shadow can be used to show shadow of the element. we acn use box-shadow{}
+box-shadow{
+offset-x | offset-y | color          --x side, y side and color
+box-shadow: 10px 10px teal;
+
+offset-x | offset-y | blur-radius | color
+box-shadow: 5px 5px 20px teal;
+
+Negative values
+box-shadow: -5px -5px 20px teal;
+
+offset-x | offset-y | blur-radius | spread-radius | color
+box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);                    --this can be used for smaal shadow
+
+inset | offset-x | offset-y | color
+box-shadow: inset -3px -3px teal;         inset, this will reverse the positions
+
+Multiple shadows
+box-shadow: 3px 3px teal, -3px -3px olive;        if we want both sides
+}
+
+<!--! Test Shadow -->
+Same as box shadow.
+
+h-shadow | v-shadow | color
+text-shadow: 0.2rem 0.2rem steelblue;
+
+h-shadow | v-shadow | blur
+text-shadow: 0.4rem 0.3rem 0.7rem steelblue;
+
+White Text(This Looks cool)
+color: #fff;
+text-shadow: 0.2rem 0.2rem 1rem steelblue;
+
+Negetive Values
+text-shadow: -0.4rem -0.3rem 0.7rem steelblue;
+
+<!--! CSS Variable -->
+we can create a css variable using --
+--light-color: #fff;     this will create a variable and assign the value
+
+<!--! KeyFrames -->
+keyframs are used for animations we should give a animation-name. which should be a keyframe. and animation-duration should be mentioned
+animation-name: animate1;
+
+we should create the keyframe.
+@keyframes animate1{
+    from {
+        top:0;
+    }
+    to{
+        width:600px;
+        background-color:red;
+        top:300px
+    }
+}
+
+animation-iteration-count: 2;     --this can be used to say how much time we need to animate.here it will animate 2 times. we acn give other values like infinite
+by default after the animation, it will go back to initial position. but we can make it stay there using animation-fill-mode
+animation-fill-mode: forwards;
+animation-delay: 1s;       --can be used to delay the animation
+animation-direction: alternate-reverse;     --this can be used to make the animation reverse. other values can be used as well
+animation-timing-function: ease-in-out;        -- we can use this to make the animation effect. there are multiple values
+
+we can do all these in one line using animation: ;
+animation: keyframe duration fill-mode delay timing-function
+animation: animate1 5s forwards 1s ease-in-out;
+
+we can animate using percentage as well
+@keyframes animate2{
+    25%{
+        top:300px;
+        left:500px;
+    }
+    50%{
+        top:400px;
+        left:500px;
+    }
+    75%{
+        top:300px;
+        left:500px;
+    }
+    100%
+    {
+        top:300px;
+        left:600px;
+    }
+}
+
+<!--! Transition -->
+Transition will only be applied when we do some events. for examble hover
+we can use transition-property: propertyname; to specify the transtion on which property. transition-property: background;
+transition-duration: 2s;  for the duration
+transition-timing-function: ease-in-out;     effect
+transition-delay: 1s;    delay
+we can do all together by transition
+transition: background 2s ease-in-out;
+
+
+but ther should be a event mentioned with that mentioned property
+.box2:hover{
+    background:red;
+    border-radius: 50%;
+    height:500px;
+    width:500px;
+}
+
+we can use multiple properties together
+transition: background,border-radius 2s ease-in-out;
+or we can use all
+transition: all 2s ease-in-out;
+
+<!--! Transition -->
+for making changes to the element, for moving or wrapping.
+example
+transform: rotate(25deg);
+transform: skew(25deg);
+transform: scale(2);  this will doubles the size
+
+we can mix this with transition.
+
+we can use translateY(100px) for getting the translation effect to the y axis it will move 100px to the Y. same for translateX()
+we can directly use translate(x, y)
+transform: translate(100px, 100px);
+we can use translate3d(100px, 100px, 100px); as well. much better performance
+
+
+we can use overflow: hidden; to not show the scroll bar
+
+
+<!--! grids -->
+Grid layout system for CSS
+Similar to flexbox (more powerful but a bit more difficult)
+Two-dimensional layouts
+Can use “align-items”, “justify-content”, etc
+Partial support for IE11
+display: grid; */ Creates a “grid” */
+All direct child elements are “grid items”
+“grid-template-columns” defines width and number of cols
+It is NOT one or the other!
+Use CSS Grid for outter elements and grid-like layouts
+Use Flex for simple alignment (Inner elements, menu items,etc)
+Most of the stuff we have done so far, | would use flex
+
+.grid{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;          --using this property we will mention the alignment, here 3 containers will be aligned 200 px each horizontally.
+}
+
+if we have 4th item, then it will come below. it will not come to thae same line only these mentioned 3 200px will be available in the first row. 4th item will be below.
+we can use auto to stretch the items to the sides
+.grid{
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+}
+grid-template-columns: auto auto auto; can be used. in this case, we can use repeat(numberof time to repeat, width) instead of typing again
+grid-template-columns: repeat(3, auto);
+
+fr usint(fraction) is the most common unit with grid. if we give 2fr,  which will be twice that of 1fr. 3 fr will be thrice of 1 fr
+it actually devide total space in to number of fractions and each items will fit inside specific mentioned fractions
+grid-template-columns: 1fr 3fr 2fr;
+
+instead of adding margin between items, we can use gid-gap: for setting the gap betweem the items
+grid-gap: 1rem;
+
+grid-template-rows: 1fr 1fr 1fr;   this can be used to align rows.
+grid-auto-rows: 1fr; this can be used to align remaining items in the row.
+we combine both rows and column properties
+.grid{
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr;
+    grid-auto-rows: 2fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+we can span specific items on both horizontal and vertical.
+.box:first-child{
+    grid-column-start: 1;  here the item will  start at first line.
+    grid-column-end: 4;     here the item will  end at 4th line. so 3 items will be covered
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+here we can directly use it.
+.box:first-child{
+    grid-column: 1 / span 3;      here it wil span from 1 to 3rd box
+    grid-row: 1 / span 2;
+}
+
+auto fit and min max
+.grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+}
+
+here the number of items is autofill. and the value of each item is minimum 200px and maximum 1fr. if we reduce the screensize below 200px, item will go down
+
+
+grid-template-areas: can be used to easily align the grid with class name.
+for that we need to first make each item to grid-area. we canmeake it by mentioning the grid area name of the section
+.header{
+    grid-area: header;
+}
+
+after that we can mention the alignment using the grid area.
+and we can mentioned the area sharing for each element.
+.container{
+    display:grid;
+    grid-template-areas:
+      'header header header header'
+      'content content content sidebar'
+      'box-1 box-2 box-3 box-4'
+      'footer footer footer footer';
+}
+
+while using media queries we can change the template column property to fit the element and move it down.
+@media (min-width:500px){
+    .grid{
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+<!--! Finish News Grid Project -->
+
+
+https://www.netlify.com/  can be used for hosting the application
+https://www.namecheap.com/   can be used to buy domain
+
+
+<!--! SASS -->
+Syntactically Awesome StyleSheets
+CSS Preprocessor / Precompiler
+Enhances the functionality of CSS
+Other preprocessors include Less and Stylus
+Sass uses .scss or .sass file extensions
+The browser does NOT read Sass, it must be compiled
+Sass files are compiled to normal CSS files
+There are many different types of Sass compilers (cli & gui)
+.SCSS is USuUally preferred over .sass as it uses the same syntax as regular css
+
+install node js
+cntrl + l to clear the terminal
+and run npm install node-sass to install the package
+in package.json, add the script for sass
+"scripts": {
+    "sass": "node-sass -w sasssandbox/scss/ -o sasssandbox/dist/css/ --recursive"
+  },
+
+  then create a scss file in specific folder. change the scss file
+run command npm run sass
+then after making the changes to the folder will automatically compaleand update the css file
+https://github.com/sass/node-sass/issues/1894           --fix for the issue
+
+we can do same by koala
+
+fo declaring a variable in sass. we can use
+$variablename: value;
+
+$primary-color: steelblue;
+$secondary-color: skyblue;
+$light-color: #f4f4f4;
+$dark-color: #333;
+
+body{
+    background: $light-color;
+    color: $dark-color;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+we can create a new partial sass file and give common code there. we need to give _name with the name. and we can import it to the file and reuse it.
+we should give _ . so it will not create a new css file for it.
+
+to import the file we can use @import 'nameoffile';       --here we dont need to mention the _
+
+<!--% Nesting -->
+we can nest the elements directly
+header{
+    padding: 1rem;
+    background: $dark-color;
+    color: $light-color;
+    h1{
+        text-align: center;
+    }
+}
+
+if the parent class name is section and inner class name is section-a . we ca use &-a inside the nesting instead of section-a
+
+.section{
+    padding:3rem;
+    h3{
+        font-size: 2rem;
+    }
+    &-a{
+        background:$primary-color;
+        color:#fff;
+    }
+    &-b{
+        background:$secondary-color;
+        color:#fff;
+    }
+}
+
+same for psudo selectors
+
+a{
+    color:#fff;
+    &:hover{
+        color:#000
+    }
+}
+
+<!--% Inheritance -->
+we can inherit the common styles. we can create a style using %name. and use it by @extend %name;
+%btn-shared{
+    display: inline-block;
+    padding: 0.7rem 2rem;
+    border:none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top:1rem;
+}
+
+.btn{
+    &-light{
+        @extend %btn-shared;
+        background: #fff;
+        color: #333;
+    }
+
+    &-dark{
+        @extend %btn-shared;
+        background: #333;
+        color: #fff;
+    }
+}
+
+<!--% Function -->
+Function will return something. but mixing will set some styling. sowecan create functions using @function name(){}
+@function set-text-color($color){
+    @if(lightness($color) > 50){
+        @return #000;
+    }
+    @else{
+        @return #fff;
+    }
+}
+
+we can call the func like this
+header{
+    background: $primary-color;
+    color: set-text-color($dark-color);
+}
+
+mixin can be used to reutilise the code, so we dont repeat ourselves.
+to declare mixin:
+@mixin transform($property){
+    --webkit-transform:$property;
+    -ms-transform: $property;
+    transform:$property;
+}
+
+to use it:
+@include transform(rotate(30deg));
+.btn{
+    &-light{
+        background: $light-color;
+        &:hover{
+            @include transform(rotate(30deg));       --- we can use the mixing like this
+        }
+    }
+
+    &-dark{
+        background: $dark-color;
+        &:hover{
+            @include transform(rotate(30deg));        -- so we dont need to repeat the code, we can use both in same place
+        }
+    }
+}
+we can use some predefined sass function as well.
+background: darken($light-color, 10%)
+background: lighten($dark-color, 10%)
+
+<!--! Finish Portfolio Project -->

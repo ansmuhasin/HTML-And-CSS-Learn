@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:#333;
+        }
+
+        .box1{
+            width:200px;
+            height: 200px;
+            background:white;
+            /* animation-duration: 5s;
+            animation-name: animate1;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out; */
+            animation: animate1 5s forwards 1s ease-in-out;
+            position: relative;
+        }
+
+        .box2{
+            width:100px;
+            height: 100px;
+            background:white;
+            position: relative;
+            top:300px;
+            left:600px;
+            animation: animate2 5s forwards 1s ease-in-out;
+        }
+
+        @keyframes animate2{
+            25%{
+                top:300px;
+                left:500px;
+            }
+            50%{
+                top:400px;
+                left:500px;
+            }
+            75%{
+                top:300px;
+                left:500px;
+            }
+            100%
+            {
+                top:300px;
+                left:600px;
+            }
+        }
+
+        @keyframes animate1{
+            from {
+                top:0;
+            }
+            to{
+                width:600px;
+                top:300px;
+                height: 100px;
+                background:red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <DIV class="box1"></DIV>
+    <div class="box2"></div>
+</body>
+</html>
